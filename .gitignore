@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
@@ -5,3 +6,27 @@
 /SvgRasterizer/x64/Debug
 /x64/Debug
 *.user
+=======
+# Visual Studio build artifacts
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.suo
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+ipch/
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.obj
+*.tlog/
+*.lastbuildstate
+>>>>>>> 27f5d6acec9bc82f3a4cfd9b5986b22f058231d3
