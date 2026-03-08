@@ -205,7 +205,7 @@ int wmain(int argc, wchar_t* argv[])
         if (svgW <= 0.0f || svgH <= 0.0f)
         {
             D2D1_SVG_VIEWBOX viewBox{};
-            if (SUCCEEDED(root->GetAttributeValue(L"viewBox", &viewBox)))
+            //if (SUCCEEDED(root->GetAttributeValue(L"viewBox", &viewBox)))
             {
                 if (svgW <= 0.0f && viewBox.width  > 0.0f) svgW = viewBox.width;
                 if (svgH <= 0.0f && viewBox.height > 0.0f) svgH = viewBox.height;
@@ -218,11 +218,14 @@ int wmain(int argc, wchar_t* argv[])
         if (svgW <= 0.0f) svgW = 256.0f;
         if (svgH <= 0.0f) svgH = 256.0f;
 
+        std::wcout << L"Using a width and height of " << svgW << L"x" << svgH << std::endl;
         // -------------------------------------------------------------------
         // Compute output pixel dimensions
         // -------------------------------------------------------------------
         const UINT32 outW = std::max(1u, static_cast<UINT32>(svgW * scaleFactor));
         const UINT32 outH = std::max(1u, static_cast<UINT32>(svgH * scaleFactor));
+        std::wcout << L"Requested scale factor is " << scaleFactor << L"." << std::endl;
+        std::wcout << L"Using an output size of " << outW << L"x" << outH << std::endl;
 
         // Tell the SVG document to render into the scaled viewport
         ThrowIfFailed(
