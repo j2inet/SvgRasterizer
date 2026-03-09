@@ -272,6 +272,7 @@ int wmain(int argc, wchar_t* argv[])
         dc->SetTarget(targetBitmap.Get());
         dc->BeginDraw();
         dc->Clear(D2D1::ColorF(0.0f, 0.0f, 0.0f, 0.0f));  // transparent background
+        dc->SetTransform(D2D1::Matrix3x2F::Scale(scaleFactor, scaleFactor));
         dc->DrawSvgDocument(svgDoc.Get());
         ThrowIfFailed(dc->EndDraw(), "EndDraw");
 
